@@ -1,6 +1,8 @@
 # timeLeft
 Just another countdown plugin for jQuery.
 
+**Requires jQuery UI Widget Factory >= 1.11.4**
+
 ## Features
 
 - nothing extraordinary
@@ -47,5 +49,3 @@ destroys the countdown
 ## Copyright
 
 Released under the [MIT License](http://opensource.org/licenses/MIT).
-
-Hopefully somebody finds this helpful.
