@@ -1,4 +1,4 @@
-/* timeLeft v0.9.1 <github.com/fiedlr/timeLeft> | (c) 2015 Adam Fiedler | Released under MIT License <opensource.org/licenses/MIT> */
+/* timeLeft v0.9.2 <github.com/fiedlr/timeLeft> | (c) 2015 Adam Fiedler | Released under MIT License <opensource.org/licenses/MIT> */
 $.widget('tml.timeLeft', {
 
 	// Inner attributes	
