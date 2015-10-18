@@ -36,7 +36,7 @@ how long a refresh should take in milliseconds
 ### complete
 the function to be run after the countdown reaches 0
 
-**Default**: function () { alert('It\'s time!'); }
+**Default**: function () { alert("It's time!"); }
 
 ## Methods
 
