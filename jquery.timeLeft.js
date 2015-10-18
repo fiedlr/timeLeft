@@ -1,4 +1,4 @@
-/* timeLeft v0.9.2 <github.com/fiedlr/timeLeft> | (c) 2015 Adam Fiedler | Released under MIT License <opensource.org/licenses/MIT> */
+/* timeLeft v0.9.3 <github.com/fiedlr/timeLeft> | (c) 2015 Adam Fiedler | @license <opensource.org/licenses/MIT> */
 $.widget('tml.timeLeft', {
 
 	// Inner attributes	
@@ -10,7 +10,7 @@ $.widget('tml.timeLeft', {
 		format: '%Y years %M months %W weeks %D days %h hours %m minutes %s seconds remain...',
 		refreshInterval: 1000,
 		complete: function () {
-			alert('It\'s time!');
+			alert("It's time!");
 		}	
 	},
 	
@@ -29,8 +29,9 @@ $.widget('tml.timeLeft', {
 		};	
 				
 		// Sets an interval
-		if (this.refresh() !== false)
-		this.clock = setInterval(this.refresh.bind(this), this.options.refreshInterval);
+		if (this.refresh() !== false) {
+			this.clock = setInterval(this.refresh.bind(this), this.options.refreshInterval);
+		}
 					
 	},
 		
@@ -42,43 +43,43 @@ $.widget('tml.timeLeft', {
 			
 		if (distance > 0) {
 				
-			if (this.wanted.years != -1) {
+			if (this.wanted.years !== -1) {
 				var years = Math.floor(distance / 365.25); // needs a fix for the leap year
 				content = content.replace('%Y', years);
 				distance -= years * 365.25;						
 			}
 				
-			if (this.wanted.months != -1) {
+			if (this.wanted.months !== -1) {
 				var months = Math.floor(distance / 30.4375); // needs a fix for the leap year
 				content = content.replace('%M', months);
 				distance -= months * 30.4375;						
 			}
 			
-			if (this.wanted.weeks != -1) {
+			if (this.wanted.weeks !== -1) {
 				var weeks = Math.floor(distance / 7);
 				content = content.replace('%W', weeks);
 				distance -= weeks * 7;							
 			}
 				
-			if (this.wanted.days != -1) {
+			if (this.wanted.days !== -1) {
 				var days = Math.floor(distance);
 				content = content.replace('%D', days);
 				distance -= days;
 			}
 				
-			if (this.wanted.hours != -1) {
+			if (this.wanted.hours !== -1) {
 				var hours = Math.floor(distance * 24);
 				content = content.replace('%h', hours);
 				distance -= hours / 24;						
 			}
 				
-			if (this.wanted.minutes != -1) {
+			if (this.wanted.minutes !== -1) {
 				var minutes = Math.floor(distance * 24 * 60);
 				content = content.replace('%m', minutes);
 				distance -= minutes / 24 / 60;				
 			}
 			
-			if (this.wanted.seconds != -1) {
+			if (this.wanted.seconds !== -1) {
 				var seconds = Math.floor(distance * 24 * 60 * 60);
 				content = content.replace('%s', seconds);	
 			}
@@ -102,8 +103,9 @@ $.widget('tml.timeLeft', {
 		
 	_destroy: function () {
 			
-		if (this.clock != null)
-		clearInterval(this.clock);
+		if (this.clock !== null) {
+			clearInterval(this.clock);
+		}
 			
 		this.element.html('');
 			
