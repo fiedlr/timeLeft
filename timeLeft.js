@@ -1,5 +1,5 @@
-/* timeLeft v0.7.0 <github.com/fiedlr/timeLeft> | (c) 2012 Adam Fiedler | @license <opensource.org/licenses/MIT> */
-timeLeft = function (date, format, area, reaction) {
+/* timeLeft v0.7.1 <github.com/fiedlr/timeLeft> | (c) 2016 Adam Fiedler | @license <opensource.org/licenses/MIT> */
+var timeLeft = function (date, format, area, reaction) {
 	this.then = new Date(date);
 	this.format = format;
 	this.area = area;
@@ -10,7 +10,7 @@ timeLeft = function (date, format, area, reaction) {
 	
 	// Set an interval
 	this.clock = setInterval(this.refresh.bind(this), 1000);
-}
+};
 
 // Things needed to be refreshed
 timeLeft.prototype.refresh = function () {
@@ -20,7 +20,7 @@ timeLeft.prototype.refresh = function () {
 	
 	if (distance > 0) {
 		// Years
-		if (format.search('%Y') != -1) {
+		if (format.search('%Y') !== -1) {
 			var years = Math.floor(distance / 365.25);
 			format = format.replace('%Y', years);
 			
@@ -29,7 +29,7 @@ timeLeft.prototype.refresh = function () {
 		}
 		
 		// Months
-		if (format.search('%M') != -1) {
+		if (format.search('%M') !== -1) {
 			var months = Math.floor(distance / 30.4375);
 			format = format.replace('%M', months);
 			
@@ -38,7 +38,7 @@ timeLeft.prototype.refresh = function () {
 		}
 		
 		// Weeks
-		if (format.search('%W') != -1) {
+		if (format.search('%W') !== -1) {
 			var weeks = Math.floor(distance / 7);
 			format = format.replace('%W', weeks);
 			
@@ -47,7 +47,7 @@ timeLeft.prototype.refresh = function () {
 		}
 		
 		// Days
-		if (format.search('%D') != -1) {
+		if (format.search('%D') !== -1) {
 			var days = Math.floor(distance);
 			format = format.replace('%D', days);
 			
@@ -56,7 +56,7 @@ timeLeft.prototype.refresh = function () {
 		}
 		
 		// Hours
-		if (format.search('%h') != -1) {
+		if (format.search('%h') !== -1) {
 			var hours = Math.floor(distance * 24);
 			format = format.replace('%h', hours);
 			
@@ -65,7 +65,7 @@ timeLeft.prototype.refresh = function () {
 		}
 		
 		// Minutes
-		if (format.search('%m') != -1) {
+		if (format.search('%m') !== -1) {
 			var minutes = Math.floor(distance * 24 * 60);
 			format = format.replace('%m', minutes);
 			
@@ -74,7 +74,7 @@ timeLeft.prototype.refresh = function () {
 		}
 		
 		// Seconds
-		if (format.search('%s') != -1) {
+		if (format.search('%s') !== -1) {
 			var seconds = Math.floor(distance * 24 * 60 * 60);
 			format = format.replace('%s', seconds);
 		}
@@ -92,13 +92,13 @@ timeLeft.prototype.refresh = function () {
 		this.reaction = null;
 	}
 	
-	if (!(typeof jQuery != 'undefined' && !area.html(format))) { 
+	if (!(typeof jQuery !== 'undefined' && !this.area.html(format))) { 
 		// Show the change
 		this.area.innerHTML = format;
 	}
-}
+};
 
 // In case you want to stop it :-)
 timeLeft.prototype.stop = function () {
 	clearInterval(this.clock);	
-}
+};
