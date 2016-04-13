@@ -2,7 +2,7 @@
   "name": "timeLeft",
   "version": "0.9.3",
   "description": "Just another countdown plugin for jQuery.",
-  "authors": ["Adam Fiedler <info@fiedlr.io>"],
+  "author": "Adam Fiedler <info@fiedlr.io>",
   "license": "MIT",
   "homepage": "https://github.com/fiedlr/timeLeft",
   "keywords": [
@@ -11,18 +11,15 @@
     "countdown",
     "timer"
   ],
-  "main": [
-    "dist/jquery.timeLeft.min.js",
-    "dist/timeLeft.min.js"
-  ],
+  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fiedlr/timeLeft.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fiedlr/timeLeft/issues"
+  },
   "dependencies": {
     "jquery": "~1.11 || ~2.1",
-    "jquery-ui": "~1.11"
-  },
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test"
-  ],
+  }
 }
